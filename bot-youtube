@@ -1,0 +1,52 @@
+import pyautogui
+import keyboard
+import time
+
+def cautare_google():
+    i=0
+    x=300
+    y=350
+    z=-400
+    if pyautogui.locateOnScreen(r'C:\Users\BogTh\Desktop\cautare_google.png', confidence=0.7) != None:
+        camp_google=pyautogui.locateOnScreen(r'C:\Users\BogTh\Desktop\cautare_google.png', confidence=0.7)
+        pyautogui.click(camp_google)
+        time.sleep(1)
+        pyautogui.write("https://www.youtube.com/c/ZonaitTvro")
+        pyautogui.press('enter')
+    else:
+        print ("Imaginea nu se afla pe ecran")
+    time.sleep(1)
+    if pyautogui.locateOnScreen(r'C:\Users\BogTh\Desktop\videos.png', confidence=0.7) != None:
+        camp_video=pyautogui.locateOnScreen(r'C:\Users\BogTh\Desktop\videos.png', confidence=0.7)
+        pyautogui.click(camp_video)
+        time.sleep(1)
+    while pyautogui.locateOnScreen(r'C:\Users\BogTh\Desktop\videopoza.png',confidence= 0.7) != None:
+        if pyautogui.locateOnScreen(r'C:\Users\BogTh\Desktop\videopoza.png',confidence= 0.7) != None:
+            time.sleep(1)
+            pyautogui.scroll(z)
+            i=i+1
+            time.sleep(1)
+            pyautogui.moveTo(x,y)
+            time.sleep(1)
+            pyautogui.click()
+            time.sleep(1)
+            pyautogui.locateOnScreen (r'C:\Users\BogTh\Desktop\zonait.png',confidence= 0.7)
+            time.sleep(1)
+            camp_zonait=pyautogui.locateOnScreen (r'C:\Users\BogTh\Desktop\zonait.png',confidence= 0.7)
+            time.sleep(1)
+            pyautogui.click(camp_zonait)
+            time.sleep(1)
+            camp_video=pyautogui.locateOnScreen(r'C:\Users\BogTh\Desktop\videos.png', confidence=0.7)
+            pyautogui.click(camp_video)
+            time.sleep(1)
+            x=x+300
+            if i%5==0:
+                z=z-200
+                x=600
+                y=500
+            time.sleep(1)
+    else:
+        print("Imaginea nu se afla pe ecran")
+        
+time.sleep(2)
+cautare_google()
