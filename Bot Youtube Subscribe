@@ -1,0 +1,22 @@
+import pyautogui
+import keyboard
+import time
+
+def cautare_google():
+    if pyautogui.locateOnScreen(r'C:\Users\Student\Desktop\cautare_google.png', confidence=0.7) != None:
+        camp_google=pyautogui.locateOnScreen(r'C:\Users\Student\Desktop\cautare_google.png', confidence=0.7)
+        pyautogui.click(camp_google)
+        time.sleep(3)
+        pyautogui.write("https://www.youtube.com/c/ZonaitTvro")
+        pyautogui.press('enter')
+    else:
+        print ("Imaginea nu se afla pe ecran")
+    time.sleep(5)
+    if pyautogui.locateOnScreen(r'C:\Users\Student\Desktop\subscribe.png', confidence=0.7) != None:
+        camp_subscribe=pyautogui.locateOnScreen(r'C:\Users\Student\Desktop\subscribe.png', confidence=0.7)
+        pyautogui.click(camp_subscribe)
+        time.sleep(3)
+    else:
+        print("Imaginea nu se afla pe ecran")
+time.sleep(2)
+cautare_google()
